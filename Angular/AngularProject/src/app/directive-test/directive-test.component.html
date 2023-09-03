@@ -1,0 +1,13 @@
+<h2>Angular Day 2</h2>
+<p [hidden]="clicked">The Secret of the Day is Up, Up, Down, Down, Left, Right, Left, Right, B, A, Start</p>
+<button type="button" (click)="resetButton($event)">Reset List</button><br>
+<button type="button" (click)="buttonClick($event)">Show Text</button>
+<div *ngFor="let item of clickTime; let i = index">
+    <div>
+        <p *ngIf="item < 5"> {{item}} </p>
+    </div>
+    <div>
+        <p *ngIf="item >= 5" [ngStyle]="{'color':'white', 'background-color':'blue'}" [ngClass]="'test'"> {{item}} </p>
+    </div>
+</div>
+
