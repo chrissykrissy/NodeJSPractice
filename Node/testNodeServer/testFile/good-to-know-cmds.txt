@@ -1,0 +1,40 @@
+git add [path/file]
+*Will check the directory for any recently changed files and add them to a list
+** use . as the path/file in order to add every changed file in the directory
+*** green means tracked files that are on the list, red are files that have been modified but not added to the list
+
+git status
+*Will show all current files added to the list through git add
+
+git commit -m "message"
+*Will commit all the files on the green files on the list
+**get in the habit of adding -m after to denote that you are going to add a commit/update message
+***add the message after the -m in between ""
+
+git push origin [branch]
+*Will push all the committed files to the remote repository
+**origin will be the remote url you have set or is preset in the directory you've cloned
+***replace [branch] with the actual branch name; ie: Dev, QA, Prod, Master
+
+git pull origin [branch]
+*Will pull from the remote url specified in your git remote url
+**replace [branch] with the branch you want to pull from in the remote repository 
+
+git reset
+*Will take all added files out of your commit list
+
+git checkout
+*will check out the existing remote or local branch if you add the branch name after 
+**adding -b after the checkout and before the branch name will create a new branch on your local with the name of the branch specified 
+***This branch will not be created on the remote until you have pushed to that new branch
+****git checkout -b new branch
+
+cd [foldername]
+*moves you to that foldername
+** use .. to move back a directory
+
+ls
+*gives you a full list of your files in git and linux
+
+dir
+* same a ls but for windows terminals
