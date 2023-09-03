@@ -1,3 +1,5 @@
+//test.js file version 2.0
+
 let letVar = 0;
 const constVar = "Kekw, I can't be changed";
 const string = "lkaj;sdlfkjas";
