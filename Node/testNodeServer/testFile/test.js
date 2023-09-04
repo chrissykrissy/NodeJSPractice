@@ -145,9 +145,82 @@ function checkActiveAgent(user) {
     });
 }
 
+function isWeekday(day){
+    return new Promise((resolve, reject) => {
+        try {
+            const daysOfWeek = [ "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+            if(typeof(day) !== String){
+                return reject("Error in data type");
+            }
+
+            for(let i = 0; i<daysOfWeek.length; i++){
+                if(day.toLowerCase() === daysOfWeek[i]){
+                    //console.log(`${day} is a weekday`);
+                    return resolve(`${day} is a weekday`);
+                } else {
+                    //console.log(`${day} is not a weekday`);
+                    return resolve(`${day} is not a weekday`);
+                }
+            }
+        } catch (e) {
+            //console.log(`Error in checking weekday.  ${day} does not match any existing day of the week`);
+            return reject(`Error in checking weekday.  ${day} does not match any existing day of the week`);
+        }
+    });
+}
+
+function GeeSungsListOfDays(dayOfWeek) {
+    return new Promise((resolve, reject) => {
+        try{
+            if ((typeof dayOfWeek) === 'string') {
+                const listOfDays = [
+                    'monday',
+                    'tuesday',
+                    'wednesday',
+                    'thursday',
+                    'friday',
+                    'saturday',
+                    'sunday',
+                ];
+
+                console.log(listOfDays[0]);
+                console.log(dayOfWeek.toLowerCase());
+                console.log(dayOfWeek.toLowerCase() === listOfDays[0]);
+        
+                switch(dayOfWeek){
+                    case dayOfWeek.toLowerCase() === listOfDays[0]:
+                        return resolve("Ugh, I hate Mondays!");
+                    case dayOfWeek.toLowerCase() === listOfDays[1]:
+                        return resolve("I HATE TUESDAYS!");
+                    case dayOfWeek.toLowerCase() === listOfDays[2]:
+                        return resolve("I HATE WEDNESDAYS!");
+                    case dayOfWeek.toLowerCase() === listOfDays[3]:
+                        return resolve("I HATE THURSDAYS!");
+                    case dayOfWeek.toLowerCase() === listOfDays[4]:
+                        return resolve("YAY, I LOVE FRIDAYS!");
+                    case dayOfWeek.toLowerCase() === listOfDays[5]:
+                        return resolve("YAY, I LOVE SATURDAYS!");
+                    case dayOfWeek.toLowerCase() === listOfDays[6]:
+                        return resolve("YAY, I LOVE SUNDAYS!");
+                    default:
+                        return reject(`${dayOfWeek} is an invalid day`);
+                }
+            } else {
+                return "Invalid Data Type; Please try again"
+            }
+        } catch (e) {
+            return reject("Something went terribly wrong");
+        }
+    });
+}
+
 async function main() {
     // let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     // await ifEvenOrOdd(array);
+
+    let variable = "hi";
+    console.log(typeof variable === 'string');
 
     let user = {
         username: 'user1',
@@ -189,6 +262,17 @@ async function main() {
     });
 
     console.log(`List of Inactive Agents \n`, results);
+
+    console.log(await isWeekday(42)
+    .catch(e => {
+        return e;
+    }));
+
+    console.log(await GeeSungsListOfDays("monday")
+    .catch(e => {
+        console.log(e);
+    }));
+
 }
 
 main();
