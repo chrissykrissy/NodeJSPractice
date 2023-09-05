@@ -1,11 +1,34 @@
-//test.js file version 2.0
-//Testing GeeSung
+/**********************
+ * JAVASCRIPT TUTORIAL*
+ **********************/
 
+/**
+ * TOPIC COVERED:
+ * Use Ctrl+F and put in the topic name to jump to that example
+ * 
+ * [data assignment operators]
+ * [function creation tutorial]
+ * [if block tutorial]
+ * [basic for loop tutorial]
+ * [for loop tutorial]
+ * [while loop tutorial]
+ * [switch case tutorial]
+ * [promise function tutorial]
+ * [promise function example2]
+ * [promise function example]
+ * [main method tutorial]
+ */
+
+//[data assignment operators]
+//let locks the variable to the current method scope
 let letVar = 0;
+//const cannot be changed and is immutable
 const constVar = "Kekw, I can't be changed";
-const string = 'lkaj;sdlfkjas';
+//var variables can be accessed on a universal scope
+var string = 'lkaj;sdlfkjas';
 const integer = 3;
 
+//[function creation tutorial]
 //function addNumbers(parameter)
 function addNumbers(number) {
     //must always have a return if you want the function to return a value that can be manipulated
@@ -13,10 +36,15 @@ function addNumbers(number) {
     //console.log(`This console log is from within the funciton scope: ${i}`);
 }
 
+//[if block tutorial]
 function ifLoops(bool) {
+    //if statement is given a comparitor and checks if that statement is true 
     if (bool === true) {
+        //if it is, run this
         console.log('true');
+    //else if gives another comparitor to check
     } else if (bool === false) {
+        //else if it matches, run this code
         console.log('false');
     } else if (bool === 1) {
         /*=== means both the data type and the value must match*/ console.log(
@@ -24,11 +52,14 @@ function ifLoops(bool) {
         );
     } else if (bool == '1') {
         /*== means that only the value has to match*/ console.log('Soft Match');
+    //else if nothing else matches
     } else {
+        //run this
         console.log('You failed to give me a boolean');
     }
 }
 
+//[basic for loop tutorial]
 function forLoops(number) {
     //for([variable] = [start number]; [variable] < [end number], [variable]++)
     for (let i = 0; i < number; i++) {
@@ -36,18 +67,29 @@ function forLoops(number) {
     }
 }
 
+//[while loop tutorial]
 function whileLoops(number) {
     let i = 0;
+    //while comaparitor
+    //while the comparitor is false
+    //keep looping on the comparitor is true
     while (i < number) {
         console.log(`Current while iteration: ${i}`);
+        //the i++ is necessary to eventually end the while loop
+        //otherwise, i will never increment making the comparitor statement infinite
         i++;
     }
 }
 
+//[switch case tutorial]
 function switchCase(caseVar) {
+    //switch([variable to be compared])
     switch (caseVar) {
+        //case [case statement]:
         case 'hi':
+            //code manipulation
             console.log('hi, my name is program');
+            //either return a value or break to move on
             break;
         case 'bye':
             console.log("Okay, bye.  I'll miss you");
@@ -55,20 +97,14 @@ function switchCase(caseVar) {
         case 'word':
             console.log('Word up, homie');
             break;
+        //the else statement of a switch case.  If none of the case matches, it moves to here
         default:
             console.log('Can you repeat that?');
             break;
     }
 }
 
-function asyncFunction() {
-    let i = 0;
-    setTimeout(() => {
-        i += 10;
-    }, 1000);
-    console.log(i);
-}
-
+//[for loop tutorial]
 function ifEvenOrOdd(array) {
     //returns a new promise
     return new Promise(() => {
@@ -93,6 +129,7 @@ function ifEvenOrOdd(array) {
     });
 }
 
+//[promise function tutorial]
 function checkActiveAgent(user) {
     //returns a new Promise function
     //resolve will always return a non error value
@@ -145,6 +182,7 @@ function checkActiveAgent(user) {
     });
 }
 
+//ruru - [promise function example]
 function isWeekday(day) {
     return new Promise((resolve, reject) => {
         try {
@@ -180,6 +218,7 @@ function isWeekday(day) {
     });
 }
 
+//ruru - [promise function example 2]
 function GeeSungsListOfDays(dayOfWeek) {
     return new Promise((resolve, reject) => {
         try {
@@ -194,48 +233,46 @@ function GeeSungsListOfDays(dayOfWeek) {
                     'sunday',
                 ];
 
-                console.log(listOfDays[0]);
-                console.log(dayOfWeek.toLowerCase());
-                console.log(dayOfWeek.toLowerCase() === listOfDays[0]);
-
-                function daysOfTheWeek(dayOfWeek) {
-                    if (dayOfWeek.toLowerCase() === listOfDays[0]) {
-                        return resolve('Ugh, I hate Mondays!');
-                    } else if (dayOfWeek.toLowerCase() === listOfDays[1]) {
-                        return resolve('I HATE TUESDAYS!');
-                    } else if (dayOfWeek.toLowerCase() === listOfDays[2]) {
-                        return resolve('I HATE WEDNESDAYS!');
-                    } else if (dayOfWeek.toLowerCase() === listOfDays[3]) {
-                        return resolve('I HATE THURSDAYS!');
-                    } else if (dayOfWeek.toLowerCase() === listOfDays[4]) {
-                        return resolve('YAY, I LOVE FRIDAYS!');
-                    } else if (dayOfWeek.toLowerCase() === listOfDays[5]) {
-                        return resolve('YAY, I LOVE SATURDAYS!');
-                    } else if (dayOfWeek.toLowerCase() === listOfDays[6]) {
-                        return resolve('YAY, I LOVE SUNDAYS!');
-                    } else {
-                        return reject(`${dayOfWeek} is an invalid day`);
-                    }
+                // console.log(listOfDays[0]);
+                // console.log(dayOfWeek.toLowerCase());
+                // console.log(dayOfWeek.toLowerCase() === listOfDays[0]);
+                if (dayOfWeek.toLowerCase() === listOfDays[0]) {
+                    return resolve('Ugh, I hate Mondays!');
+                } else if (dayOfWeek.toLowerCase() === listOfDays[1]) {
+                    return resolve('I HATE TUESDAYS!');
+                } else if (dayOfWeek.toLowerCase() === listOfDays[2]) {
+                    return resolve('I HATE WEDNESDAYS!');
+                } else if (dayOfWeek.toLowerCase() === listOfDays[3]) {
+                    return resolve('I HATE THURSDAYS!');
+                } else if (dayOfWeek.toLowerCase() === listOfDays[4]) {
+                    return resolve('YAY, I LOVE FRIDAYS!');
+                } else if (dayOfWeek.toLowerCase() === listOfDays[5]) {
+                    return resolve('YAY, I LOVE SATURDAYS!');
+                } else if (dayOfWeek.toLowerCase() === listOfDays[6]) {
+                    return resolve('YAY, I LOVE SUNDAYS!');
+                } else {
+                    return reject(`${dayOfWeek} is an invalid day`);
                 }
 
-                // switch(dayOfWeek){
-                //     case dayOfWeek.toLowerCase() === listOfDays[0]:
+                // switch(dayOfWeek.toLowerCase()){
+                //     case listOfDays[0]:
                 //         return resolve("Ugh, I hate Mondays!");
-                //     case dayOfWeek.toLowerCase() === listOfDays[1]:
+                //     case listOfDays[1]:
                 //         return resolve("I HATE TUESDAYS!");
-                //     case dayOfWeek.toLowerCase() === listOfDays[2]:
+                //     case listOfDays[2]:
                 //         return resolve("I HATE WEDNESDAYS!");
-                //     case dayOfWeek.toLowerCase() === listOfDays[3]:
+                //     case listOfDays[3]:
                 //         return resolve("I HATE THURSDAYS!");
-                //     case dayOfWeek.toLowerCase() === listOfDays[4]:
+                //     case listOfDays[4]:
                 //         return resolve("YAY, I LOVE FRIDAYS!");
-                //     case dayOfWeek.toLowerCase() === listOfDays[5]:
+                //     case listOfDays[5]:
                 //         return resolve("YAY, I LOVE SATURDAYS!");
-                //     case dayOfWeek.toLowerCase() === listOfDays[6]:
+                //     case listOfDays[6]:
                 //         return resolve("YAY, I LOVE SUNDAYS!");
                 //     default:
                 //         return reject(`${dayOfWeek} is an invalid day`);
                 // }
+                
             } else {
                 return 'Invalid Data Type; Please try again';
             }
@@ -245,9 +282,18 @@ function GeeSungsListOfDays(dayOfWeek) {
     });
 }
 
+//[main method tutorial]
+//Javascript normally doesn't use main methods as main methods are mostly used in object oriented, synchronous programming languages
+//Since Javascript runs both asynchronously and doesn't use Objects as it's main source of data manipulation
+//we can normally run the functions anywhere and anyway we virutally want
+//However, promise functions are both objects and synchronous so we need to use a main method to run promise functions
+//to run async await functions, use the async descriptor before the function descriptor and then use the await descriptor before
+//the actual function call
+//If for some reason you want to use a promise function outside of an async method, use the .then block.
+//ctrl + f [then/catch example] for how to write a .then block
 async function main() {
-    // let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // await ifEvenOrOdd(array);
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    await ifEvenOrOdd(array);
 
     let variable = 'hi';
     console.log(typeof variable === 'string');
@@ -293,17 +339,31 @@ async function main() {
 
     console.log(`List of Inactive Agents \n`, results);
 
-    console.log(
-        await isWeekday(42).catch((e) => {
-            return e;
-        })
-    );
+    //[then/catch example] - .then and .catch example
+    isWeekday("Monday")
+    //use .then to manipulate the output of a function
+    //the symbol => is known as an IIFE - Immediate Invoked Function Expression which will apply the manipulation defined between {} after
+    //the IIFE to the variable before the IIFE
+    //In the below case, results is the variable that hosts the return output of the function that was called; in this case:  isWeekday
+    //isWeekday runs > isWeekday returns an output > that output is now in results > => will now apply a functional manipulation to results
+    .then(results => {
+        //the functional manipulation in this case is the console.log
+        console.log(results);
+    })
+    //use .catch to filter out any reject statements from a function call.  It functions similarly to the .then but instead
+    //will only bubble up and catch reject statements from the promise function
+    //output of the rejected return will be set to e; similar to how the resolve returns will be set to results in a .then
+    .catch(e => {
+        console.log(e);
+    });
 
-    console.log(
-        await GeeSungsListOfDays('monday').catch((e) => {
-            console.log(e);
-        })
-    );
+    //[await example] - this is how you would call a funciton using await
+    const result = await GeeSungsListOfDays("Mondays")
+    .catch(e => {
+        console.log(e);
+    });
+    console.log(result);
+
 }
 
 main();

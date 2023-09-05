@@ -38,3 +38,13 @@ ls
 
 dir
 * same a ls but for windows terminals
+
+const vs let
+*It's a scoping thing
+**any variable marked with var means that it can be accessed throughout the entire function regardless of scopes.  Parent functions and
+any scope after can get access to var variables
+***let locks the variable scope into that one specific block.  Any address pointing to that variable outside of that block will fail
+to recognize what the address pointer is referring to
+****Const has the same scope as let but becomes immutable.  Very useful for making sure a specific set of data is never changed such
+as JSON Web Token or a Cached data that's used for authentication.  You don't want this value to be edited and suddenly the user
+can no longer use your site
