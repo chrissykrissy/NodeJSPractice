@@ -38,6 +38,16 @@ function addNumbers(number) {
     //console.log(`This console log is from within the funciton scope: ${i}`);
 }
 
+//[Git Testing Purposes]
+function forLoops(times){
+    let res = 0;
+    for(let i = 0; i < times; i++){
+        console.log(`Hi, I have looped ${times} amount`);
+        res ++;
+    }
+    return res;
+}
+
 //[if block tutorial]
 function ifLoops(bool) {
     //if statement is given a comparitor and checks if that statement is true 
