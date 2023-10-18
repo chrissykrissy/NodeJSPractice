@@ -304,6 +304,9 @@ function GeeSungsListOfDays(dayOfWeek) {
 //If for some reason you want to use a promise function outside of an async method, use the .then block.
 //ctrl + f [then/catch example] for how to write a .then block
 async function main() {
+    let count = forLoops(10);
+    console.log(count);
+
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     await ifEvenOrOdd(array);
 
