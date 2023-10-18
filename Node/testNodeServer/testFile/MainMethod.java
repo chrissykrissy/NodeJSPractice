@@ -19,5 +19,13 @@ public class MainMethod {
         ruru.setPassword("password1234");
 
         System.out.println(ruru.getName());
+
+        CharacterCreation fighter = new CharacterCreation();
+        fighter.setName("Rune");
+        fighter.setCharacterClass("Fighter");
+        fighter.setRace("Human");
+        fighter.setStats();
+
+        System.out.println(fighter.getName());
     }
 }
