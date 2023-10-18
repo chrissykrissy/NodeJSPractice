@@ -38,6 +38,16 @@ function addNumbers(number) {
     //console.log(`This console log is from within the funciton scope: ${i}`);
 }
 
+//[Git Testing Purposes]
+function forLoops(times){
+    let res = 0;
+    for(let i = 0; i < times; i++){
+        console.log(`Hi, I have looped ${times} amount`);
+        res ++;
+    }
+    return res;
+}
+
 //[if block tutorial]
 function ifLoops(bool) {
     //if statement is given a comparitor and checks if that statement is true 
@@ -294,6 +304,9 @@ function GeeSungsListOfDays(dayOfWeek) {
 //If for some reason you want to use a promise function outside of an async method, use the .then block.
 //ctrl + f [then/catch example] for how to write a .then block
 async function main() {
+    let count = forLoops(10);
+    console.log(count);
+
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     await ifEvenOrOdd(array);
 
