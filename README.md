@@ -1,2 +1,4 @@
 # codePractice
-Programming Tutorial with Friends
+Learning NodeJS..
+
+Everything is in "dev" branch
